@@ -7,7 +7,7 @@
 ![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
-A state-of-the-art, high-performance routing infrastructure designed for next-gen transport networks. This engine synthesizes **OpenStreetMap (OSM)** and **GTFS** data into a unified, queryable knowledge graph, enabling sub-millisecond multimodal pathfinding and EV station discovery.
+A High-performance routing infrastructure designed for next-gen transport networks. This engine synthesizes **OpenStreetMap (OSM)** and **GTFS** data into a unified, queryable knowledge graph, enabling sub-millisecond multimodal pathfinding and EV station discovery.
 
 ## Key Capabilities
 
