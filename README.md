@@ -50,8 +50,8 @@ graph TD
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/your-org/routing-engine.git
-    cd routing-engine
+    git clone https://github.com/PavanTejaAI/Multimodal-Routing-Engine.git
+    cd Multimodal-Routing-Engine
     ```
 
 2.  **Start Services**
