@@ -95,5 +95,4 @@ pip install -r requirements.txt
 uvicorn backend.main:app --reload
 ```
 
----
-© 2025 Ve.ai Engineering. All Rights Reserved.
+
