@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+neo4j
+pandas
+pyrosm
+requests
+protobuf
