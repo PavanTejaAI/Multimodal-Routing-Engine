@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyderaNav | Multimodal AI Router</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="/static/style.css?v=2.0">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div class="map-controls">
+        <button id="layer-satellite" class="map-btn" title="Satellite View">
+            <i data-lucide="layers"></i>
+        </button>
+        <button id="view-3d" class="map-btn" title="3D Perspective">
+            <i data-lucide="box"></i>
+        </button>
+    </div>
+
+    <div class="ui-container">
+        <aside class="sidebar glass-panel">
+            <header>
+                <div class="logo">
+                    <i data-lucide="navigation"></i>
+                    <h1>HyderaNav <span>2025</span></h1>
+                </div>
+                <p class="subtitle">Hyderabad AI Multimodal Router 2.0</p>
+            </header>
+
+            <div class="sidebar-scroll">
+                <section class="controls">
+                    <div class="input-group">
+                        <label><i data-lucide="map-pin" class="icon-start"></i> Start Point</label>
+                        <div class="search-container">
+                            <input type="text" id="start-search" placeholder="Search start location..."
+                                class="location-search">
+                            <button class="icon-btn" id="start-locate" title="Use Current Location"><i
+                                    data-lucide="crosshair"></i></button>
+                        </div>
+                        <div class="coord-display" id="start-coord">Click on map to select...</div>
+                    </div>
+                    <div class="input-group">
+                        <label><i data-lucide="map-pin" class="icon-end"></i> End Point</label>
+                        <div class="search-container">
+                            <input type="text" id="end-search" placeholder="Search destination..."
+                                class="location-search">
+                        </div>
+                        <div class="coord-display" id="end-coord">Click on map to select...</div>
+                    </div>
+
+                    <div class="mode-selector">
+                        <button class="mode-btn active" data-mode="transit" title="Transit">
+                            <i data-lucide="train"></i>
+                        </button>
+                        <button class="mode-btn" data-mode="car" title="Car">
+                            <i data-lucide="car"></i>
+                        </button>
+                        <button class="mode-btn" data-mode="bike" title="Bike">
+                            <i data-lucide="bike"></i>
+                        </button>
+                        <button class="mode-btn" data-mode="walk" title="Walking">
+                            <i data-lucide="footprints"></i>
+                        </button>
+                    </div>
+
+                    <button id="find-route" class="primary-btn">
+                        <span>Find Optimized Route</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                    <div id="status-panel" class="hidden">
+                        <div class="loader"></div>
+                        <p>Analyzing city graph...</p>
+                    </div>
+                </section>
+
+                <section id="results" class="hidden">
+                    <div class="divider"></div>
+                    <h3>Route Details</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="label">Distance</span>
+                            <span class="value" id="res-distance">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Est. Time</span>
+                            <span class="value" id="res-time">-</span>
+                        </div>
+                    </div>
+                    <div id="route-steps"></div>
+                </section>
+            </div>
+        </aside>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/static/script.js?v=2.0"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
